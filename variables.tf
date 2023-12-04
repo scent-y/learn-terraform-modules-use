@@ -4,25 +4,25 @@
 variable "vpc_name" {
   description = "The name of the VPC"
   type        = string
-  default = "example-vpc"
+  default     = "example-vpc"
 }
 
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
-  default = "10.0.0.0/16"
+  default     = "10.0.0.0/16"
 }
 
 variable "vpc_azs" {
   description = "Availability zones for the VPC"
   type        = list(string)
-  default = ["us-west-2a", "us-west-2b", "us-west-2c"]
+  default     = ["us-west-2a", "us-west-2b", "us-west-2c"]
 }
 
 variable "vpc_private_subnets" {
   description = "Private subnets for the VPC"
-  type = list(string)
-  default = ["10.0.1.0/24", "10.0.2.0/24"]
+  type        = list(string)
+  default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
 variable "vpc_public_subnets" {
@@ -40,8 +40,8 @@ variable "vpc_enable_nat_gateway" {
 variable "vpc_tags" {
   description = "Tags to apply to resources created by the VPC module"
   type        = map(string)
-  default     = {
-    Terraform = "true"
+  default = {
+    Terraform   = "true"
     Environment = "dev"
   }
 }
