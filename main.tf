@@ -44,3 +44,14 @@ module "ec2_instances" {
     Environment = "dev"
   }
 }
+
+module "website_s3_bucket" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = "scent-y-example-2023-12-04"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
